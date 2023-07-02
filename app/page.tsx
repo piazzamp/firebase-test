@@ -14,7 +14,9 @@ export default function IndexPage() {
       Hello World. <Link href="/about">About</Link>
     </div>
     <hr/>
-    <AjaxClicker />
+    <AjaxClicker mode='POST'/>
+    <hr/>
+    <AjaxClicker mode='GET' />
     </>
   )
 }
