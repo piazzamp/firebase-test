@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
+  console.log('in POST /api/text')
   const body = await req.json()
   return NextResponse.json({msg: body['text']})
 }
