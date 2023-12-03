@@ -2,17 +2,23 @@
 
 import { FormEvent, useState } from "react"
 
-export default function AjaxClicker({mode}:{mode: "GET"|"POST"}) {
+export default function AjaxClicker({mode}:{mode: "GET"|"POST"|"PUT"|"PATCH"}) {
   const [text, setText] = useState('here is a string')  
   const [result, setResult] = useState('')
 
   async function submitHandler(e: FormEvent) {
     e.preventDefault()
     let resp: Response
+    const body = {text}
     switch (mode) {
       case "POST":
-        const body = {text}
         resp = await fetch('/api/text', {body: JSON.stringify(body), method: 'POST'})
+      break
+      case "PUT":
+        resp = await fetch('/api/text', {body: JSON.stringify(body), method: 'PUT'})
+      break
+      case "PATCH":
+        resp = await fetch('/api/text', {body: JSON.stringify(body), method: 'PATCH'})
       break
       case "GET":
         const params = new URLSearchParams([['text', text]])

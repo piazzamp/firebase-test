@@ -16,6 +16,10 @@ export default function IndexPage() {
     <hr/>
     <AjaxClicker mode='POST'/>
     <hr/>
+    <AjaxClicker mode='PUT' />
+    <hr/>
+    <AjaxClicker mode='PATCH' />
+    <hr/>
     <AjaxClicker mode='GET' />
     </>
   )
